@@ -1,8 +1,14 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import Nav from './Nav'
 
 const Login = () => {
+    const navigate = useNavigate()
+    const Adminlogin = ()=>{
+        sessionStorage.clear()
+        navigate("/adminlogin")
+    }
 
     const [data,setData]=useState
     (
@@ -24,19 +30,26 @@ const Login = () => {
                 console.log(response.data)
                 if (response.data.status == "success") {
                     alert("successfully loginned")
+                    navigate("/home")
+                    
                 }
+               
                 else{
                     alert("error")
                 }
+                
             }
         )
+        
     }
 
 
   return (
     <div>
+        
+       
         <br></br>
-        <h1><center>Login here</center></h1>
+        <h1><center>Login Here</center></h1>
         <br></br>
         <br></br>
         <div className="container">
@@ -56,7 +69,13 @@ const Login = () => {
                         <br></br>
                         <div className="col col-12 col-sm-12 col-md-12">
                         <button className="btn btn-success" onClick={readValue}>Login</button>
-                        <Link class="nav-link" to="/Signup">register</Link>
+                        <br></br>
+                        <Link class="nav-link" to="/Signup">Create Account</Link>
+                        </div>
+
+                        <div className="col col-12 col-sm-12 col-md-12">
+                        <button className="btn btn-success" onClick={Adminlogin}>ADMIN</button>
+                    
                         </div>
                        
                     </div>
