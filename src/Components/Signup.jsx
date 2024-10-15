@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import Nav from './Nav'
 
 const Signup = () => {
 
@@ -49,7 +50,12 @@ const Signup = () => {
 
 
   return (
+  
     <div>
+        <br></br>
+        <center><h2>Thillenkeri Siva Temple Online Services</h2></center>
+        <br></br>
+        
         <br></br>
         <h1><center>REGISTER HERE</center></h1>
         <br></br>
